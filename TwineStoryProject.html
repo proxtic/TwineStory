@@ -269,11 +269,12 @@ body.badend{
 &lt;&lt;cacheaudio &quot;phone1&quot; &quot;sfx/vibraphone-transition-music-cue.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;mainbackground&quot; &quot;music/ACnl1pm.mp3&quot;&gt;&gt;
 
-&lt;&lt;cacheaudio &quot;goose1&quot; &quot;sfx/sfx_goose_honk_b_02&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;goose2&quot; &quot;sfx/sfx_goose_honk_b_03&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;goose3&quot; &quot;sfx/sfx_goose_honk_b_05&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;goose4&quot; &quot;sfx/sfx_goose_honk_b_06&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start Story" tags="" position="546,396" size="100,100">&lt;&lt;set $slight_counter to 0&gt;&gt;
+&lt;&lt;cacheaudio &quot;goose1&quot; &quot;sfx/sfx_goose_honk_b_02.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;goose2&quot; &quot;sfx/sfx_goose_honk_b_03.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;goose3&quot; &quot;sfx/sfx_goose_honk_b_05.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;goose4&quot; &quot;sfx/sfx_goose_honk_b_06.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start Story" tags="" position="546,396" size="100,100">&lt;&lt;set $slight_counter to 0&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;goose1&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Hi stranger, my name is Gose, what&#39;s your name?&lt;/p&gt;
@@ -303,7 +304,6 @@ body.badend{
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Refuse Name" tags="" position="667,545" size="100,100">&lt;&lt;set $slight_counter to 1&gt;&gt;
-
 &lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
 
@@ -320,6 +320,7 @@ body.badend{
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Inciting Question" tags="" position="616,868" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;goose3&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Alright &lt;&lt;print $playername&gt;&gt;, I really called over to you because I need some help. I bought a cake and they spelled my name gose as goose.  How pathetic. Help me return it?&lt;/p&gt;
@@ -386,6 +387,7 @@ body.badend{
 &lt;&lt;endif&gt;&gt;
 
 &lt;&lt;set $slight_counter to $slight_counter + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Ask where bakery" tags="" position="541,1165" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;goose4&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Alright &lt;&lt;print $playername&gt;&gt; lets go!  I&#39;ve got a dollar and a coupon to TGIFridays, where should we go first?&lt;/p&gt;
@@ -500,6 +502,7 @@ body.badend{
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Check out store" tags="" position="497,1497" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;goose3&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2angry.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Hmmm. That&#39;s an issue, I only really have a dollar on me.  Never really got why they kept dollar in that name of places like these.  I guess that&#39;s inflation or strategic marketing or whatever. Alright, I guess change of plans, take this.&lt;/p&gt;
@@ -620,6 +623,7 @@ body.badend{
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata><tw-passagedata pid="24" name="Take Ski Mask" tags="" position="221,1431" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;goose2&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Gose hands you black ski mask&lt;/p&gt;
@@ -789,6 +793,7 @@ body.badend{
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="outside in front of car" tags="" position="296,2181" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;goose4&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/tgifridaycar.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Quick, the police sirens are getting closer, lets go get in the car.&lt;/p&gt;
@@ -1035,6 +1040,7 @@ body.badend{
 	&lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="look at cake" tags="black" position="365,3172" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio &quot;goose1&quot; volume 1 play&gt;&gt;
 &lt;&lt;set $seconds to 10&gt;&gt;
 &lt;span id=&quot;countdown&quot;&gt;&lt;img class=&quot;title-center-image&quot; src=&quot;images/cake.png&quot;&gt;&lt;/span&gt;
 &lt;&lt;type 150ms skipkey &quot;Control&quot;&gt;&gt;
@@ -1076,7 +1082,8 @@ body.badend{
 &lt;p class=&quot;back-button&quot;&gt;&lt;&lt;back Back&gt;&gt;&lt;/p&gt;
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="inside cave" tags="black" position="517,3079" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="inside cave" tags="black" position="517,3079" size="100,100">&lt;&lt;audio &quot;goose3&quot; volume 1 play&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;type 150ms skipkey &quot;Control&quot;&gt;&gt;
 &lt;p class=&quot;goodendcard&quot;&gt;Welcome&lt;/p&gt;
 &lt;&lt;/type&gt;&gt;

@@ -268,6 +268,7 @@ body.badend{
 &lt;&lt;cacheaudio &quot;submerge&quot; &quot;sfx/submerge.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;phone1&quot; &quot;sfx/vibraphone-transition-music-cue.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;mainbackground&quot; &quot;music/ACnl1pm.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;scary&quot; &quot;music/UndertaleBarrier.mp3&quot;&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;goose1&quot; &quot;sfx/sfx_goose_honk_b_02.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;goose2&quot; &quot;sfx/sfx_goose_honk_b_03.mp3&quot;&gt;&gt;
@@ -347,7 +348,9 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Disagree" tags="" position="691,1018" size="100,100">&lt;&lt;audio mainbackground fadeoverto 3 0&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Disagree" tags="" position="691,1018" size="100,100">&lt;&lt;audio mainbackground fadeoverto 1 0&gt;&gt;
+&lt;&lt;audio scary volume 0 loop play&gt;&gt;
+&lt;&lt;audio scary fadeoverto 1 1&gt;&gt;
 
 &lt;&lt;if $slight_counter is 0&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
@@ -387,6 +390,9 @@ body.badend{
 &lt;&lt;endif&gt;&gt;
 
 &lt;&lt;set $slight_counter to $slight_counter + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Ask where bakery" tags="" position="541,1165" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio scary fadeoverto 1 0&gt;&gt;
+&lt;&lt;audio mainbackground volume 0 loop play&gt;&gt;
+&lt;&lt;audio mainbackground fadeoverto 1 1&gt;&gt;
 &lt;&lt;audio &quot;goose4&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
 

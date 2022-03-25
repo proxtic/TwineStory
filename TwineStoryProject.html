@@ -281,7 +281,10 @@ body.badend{
 &lt;&lt;cacheaudio &quot;car&quot; &quot;sfx/CarChaseHitBrakes.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;clock&quot; &quot;sfx/clock.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;fridge&quot; &quot;sfx/fridge.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;box&quot; &quot;sfx/box.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start Story" tags="" position="546,396" size="100,100">&lt;&lt;set $slight_counter to 0&gt;&gt;
+&lt;&lt;cacheaudio &quot;box&quot; &quot;sfx/box.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;cardoor&quot; &quot;sfx/cardoor.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;carinterior&quot; &quot;sfx/carinterior.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;crowd&quot; &quot;sfx/crowd.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start Story" tags="" position="546,396" size="100,100">&lt;&lt;set $slight_counter to 0&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;goose1&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
@@ -702,13 +705,17 @@ body.badend{
 &lt;&lt;endif&gt;&gt;
 
 
-&lt;&lt;set $slight_counter to $slight_counter + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="Go into tgifridays" tags="" position="296,1581" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $slight_counter to $slight_counter + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="Go into tgifridays" tags="" position="296,1581" size="100,100">&lt;&lt;audio mainbackground fadeoverto .5 0&gt;&gt;
+&lt;&lt;audio dooropenandclose play&gt;&gt;
+&lt;&lt;audio crowd volume 0 loop play&gt;&gt;
+&lt;&lt;audio crowd fadeoverto 2 1&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/insidetgifridays.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Alright &lt;&lt;print $playername&gt;&gt;. I&#39;m going to need you to steal the bottomless fries.&lt;/p&gt;
 
 &lt;div class=&quot;playerTalking&quot;&gt;
-&lt;p&gt;[[Like just take some fries? -&gt;question fries]]&lt;/p&gt;
+&lt;p&gt;[[What, like just take some fries? -&gt;question fries]]&lt;/p&gt;
 &lt;/div&gt;
 
 
@@ -779,7 +786,8 @@ body.badend{
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-</tw-passagedata><tw-passagedata pid="30" name="question fries" tags="" position="296,1731" size="100,100">&lt;&lt;nobr&gt;&gt;
+</tw-passagedata><tw-passagedata pid="30" name="question fries" tags="" position="296,1731" size="100,100">
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/insidetgifridaysclose.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;No. Steal the bottomless fries.&lt;/p&gt;
@@ -794,7 +802,8 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="continue question fries" tags="" position="296,1881" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="continue question fries" tags="" position="296,1881" size="100,100">&lt;&lt;audio goose3 volume 1&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/gooseopen2angry.png&quot;&gt;
 
 &lt;&lt;type 100ms skipkey &quot;Control&quot;&gt;&gt;
@@ -811,7 +820,15 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="steal fries" tags="" position="296,2031" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="steal fries" tags="" position="296,2031" size="100,100">&lt;&lt;audio glassbreak volume 1 play&gt;&gt;
+&lt;&lt;audio crowd fadeoverto 2 0&gt;&gt;
+&lt;&lt;audio goose4 volume 1 play&gt;&gt;
+&lt;&lt;audio alarmmain volume 0  loop play&gt;&gt;
+&lt;&lt;audio alarmmain volume 0 fadeoverto 2 1&gt;&gt;
+&lt;&lt;audio policesiren volume 0 loop play&gt;&gt;
+&lt;&lt;audio policesiren volume 0 fadeoverto 3 1&gt;&gt;
+
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/insidetgifridays.jpg&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;ALRIGHT LETS RUN FOR IT&lt;/p&gt;
@@ -866,7 +883,11 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="get in car" tags="" position="346,2327" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="get in car" tags="" position="346,2327" size="100,100">&lt;&lt;audio &quot;cardoor&quot; volume 1 play&gt;&gt;
+&lt;&lt;audio &quot;policesiren&quot; fadeoverto 8 0&gt;&gt;
+&lt;&lt;audio &quot;carinterior&quot; volume 0 loop play&gt;&gt;
+&lt;&lt;audio &quot;carinterior&quot; fadeoverto 3 1&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/carview.jpg&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Sheesh, that was close. I knew I could count on you &lt;&lt;print $playername&gt;&gt;. I can tell this is the start of beautiful friendship.&lt;/p&gt;
@@ -960,7 +981,9 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="continue driving" tags="" position="346,2477" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="continue driving" tags="" position="346,2477" size="100,100">&lt;&lt;audio &quot;carinterior&quot; volume 1 loop play&gt;&gt;
+&lt;&lt;audio &quot;goose2&quot; volume 1 play&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/carview.jpg&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;I can tell you&#39;re just too exited to even speak. Now that I know you&#39;re a good friend, it&#39;s time you see HQ and get educated on my plan for world domination. I can&#39;t wait for you to meet everyone.&lt;/p&gt;
@@ -1021,7 +1044,13 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="see the cave" tags="" position="346,2777" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="see the cave" tags="black" position="346,2777" size="100,100">&lt;&lt;audio &quot;goose1&quot; volume 0 loop play&gt;&gt;
+&lt;&lt;audio &quot;goose2&quot; volume 0 loop play&gt;&gt;
+&lt;&lt;audio &quot;goose3&quot; volume 0 loop play&gt;&gt;
+&lt;&lt;audio &quot;goose4&quot; volume 0 loop play&gt;&gt;
+&lt;&lt;audio &quot;goose1&quot; fadeoverto 5 .3&gt;&gt;
+&lt;&lt;audio &quot;carinterior&quot; fadeoverto 15 0&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $seconds to 10&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/tunnelentrance.jpg&quot;&gt;
 
@@ -1043,11 +1072,14 @@ body.badend{
 	&lt;&lt;repeat 1s&gt;&gt;
 		&lt;&lt;set $seconds to $seconds - 1&gt;&gt;
 		&lt;&lt;if $seconds lt 8&gt;&gt;
+			&lt;&lt;audio &quot;goose2&quot; fadeoverto .5 .75&gt;&gt;
 			&lt;&lt;goto [[enter the cave]]&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="enter the cave" tags="black" position="402,2954" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="enter the cave" tags="black" position="402,2954" size="100,100">&lt;&lt;audio &quot;goose3&quot; fadeoverto 10 1&gt;&gt;
+&lt;&lt;audio &quot;goose4&quot; fadeoverto 8 1&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;&lt;/p&gt;
 

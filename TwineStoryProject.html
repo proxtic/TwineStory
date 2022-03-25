@@ -277,7 +277,11 @@ body.badend{
 
 &lt;&lt;cacheaudio &quot;glassbreak&quot; &quot;sfx/Shattering-Big-Glass.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;policesiren&quot; &quot;sfx/policesiren.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;alarmmain&quot; &quot;sfx/alarm2.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start Story" tags="" position="546,396" size="100,100">&lt;&lt;set $slight_counter to 0&gt;&gt;
+&lt;&lt;cacheaudio &quot;alarmmain&quot; &quot;sfx/alarm2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;car&quot; &quot;sfx/CarChaseHitBrakes.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;clock&quot; &quot;sfx/clock.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;fridge&quot; &quot;sfx/fridge.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;box&quot; &quot;sfx/box.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start Story" tags="" position="546,396" size="100,100">&lt;&lt;set $slight_counter to 0&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;goose1&quot; volume 1 play&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2.png&quot;&gt;
@@ -823,8 +827,10 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="outside in front of car" tags="" position="296,2181" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="outside in front of car" tags="" position="296,2181" size="100,100">&lt;&lt;audio alarmmain fadeoverto .5 0&gt;&gt;
 &lt;&lt;audio &quot;goose4&quot; volume 1 play&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/tgifridaycar.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;Quick, the police sirens are getting closer, lets go get in the car.&lt;/p&gt;
@@ -841,7 +847,10 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="don&#39;t get in car" tags="" position="226,2327" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="don&#39;t get in car" tags="" position="226,2327" size="100,100">&lt;&lt;audio &quot;goose2&quot; volume 1 play&gt;&gt;
+
+
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2red.png&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;&lt;&lt;print $playername&gt;&gt;. I don&#39;t have time for this. Fine do whatever you want, but I&#39;ll be seeing you later.&lt;/p&gt;
@@ -873,8 +882,9 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="keep waiting" tags="" position="144,1881" size="100,100">&lt;&lt;audio goose4 volume 1 play&gt;&gt;
-&lt;&lt;audio alarmmain volume 0 play&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="keep waiting" tags="" position="144,1881" size="100,100">&lt;&lt;set $seconds to 10&gt;&gt;
+&lt;&lt;audio goose4 volume 1 play&gt;&gt;
+&lt;&lt;audio alarmmain volume 0  loop play&gt;&gt;
 &lt;&lt;audio alarmmain volume 0 fadeoverto 2 1&gt;&gt;
 
 &lt;&lt;nobr&gt;&gt;
@@ -894,9 +904,18 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="goose comes out" tags="" position="146,2032" size="100,100">&lt;&lt;audio goose3 volume 1 play&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;silently&gt;&gt;
+	&lt;&lt;repeat 1s&gt;&gt;
+		&lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+		&lt;&lt;if $seconds lt 5&gt;&gt;
+			&lt;&lt;goto [[goose comes out]]&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="goose comes out" tags="" position="144,2036" size="100,100">&lt;&lt;set $seconds to 10&gt;&gt;
+&lt;&lt;audio goose3 volume 1 play&gt;&gt;
 &lt;&lt;audio dooropenandclose volume 1 play&gt;&gt;
-&lt;&lt;audio policesiren volume 0 play&gt;&gt;
+&lt;&lt;audio policesiren volume 0 loop play&gt;&gt;
 &lt;&lt;audio policesiren volume 0 fadeoverto 2 1&gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/goosemain2fries.png&quot;&gt;
@@ -905,7 +924,7 @@ body.badend{
 
 
 &lt;div class=&quot;playerTalking&quot;&gt;
-&lt;p&gt;[[Car? -&gt;outside in front of car]]&lt;/p&gt;
+&lt;p&gt;[[Ride? -&gt;outside in front of car]]&lt;/p&gt;
 &lt;/div&gt;
 
 
@@ -914,10 +933,21 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="goose gets driven off" tags="" position="206,2481" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;silently&gt;&gt;
+	&lt;&lt;repeat 1s&gt;&gt;
+		&lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+		&lt;&lt;if $seconds lt 5&gt;&gt;
+			&lt;&lt;goto [[outside in front of car]]&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="goose gets driven off" tags="" position="206,2481" size="100,100">&lt;&lt;audio &quot;car&quot; volume 0 play&gt;&gt;
+&lt;&lt;audio &quot;car&quot; volume 0 fadeoverto 1 1&gt;&gt;
+&lt;&lt;audio &quot;policesiren&quot; fadeoverto 8 0&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/tgifriday.png&quot;&gt;
 
-&lt;p class=&quot;gooseTalking&quot;&gt;I&#39;m going home.&lt;/p&gt;
+&lt;p class=&quot;gooseTalking&quot;&gt;Whatever, he&#39;s crazy, I&#39;m going home.&lt;/p&gt;
 
 
 &lt;div class=&quot;playerTalking&quot;&gt;
@@ -946,7 +976,11 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="go home" tags="black" position="208,2628" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="go home" tags="black" position="208,2652" size="100,100">&lt;&lt;set $seconds to 10&gt;&gt;
+&lt;&lt;audio &quot;clock&quot; volume 0 loop play&gt;&gt;
+&lt;&lt;audio &quot;clock&quot; fadeoverto 10 1&gt;&gt;
+
+&lt;&lt;nobr&gt;&gt;
 
 &lt;&lt;type 80ms skipkey &quot;Control&quot;&gt;&gt;
 &lt;p class=&quot;gooseTalking&quot;&gt;Later that night&lt;/p&gt;
@@ -963,7 +997,15 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="driving2" tags="" position="346,2625" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;silently&gt;&gt;
+	&lt;&lt;repeat 1s&gt;&gt;
+		&lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+		&lt;&lt;if $seconds lt 2&gt;&gt;
+			&lt;&lt;goto [night]]&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="driving2" tags="" position="346,2625" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/carview.jpg&quot;&gt;
 
 &lt;p class=&quot;gooseTalking&quot;&gt;You&#39;ll see.&lt;/p&gt;
@@ -1043,7 +1085,8 @@ body.badend{
 &lt;&lt;button &quot;Restart to Main&quot;&gt;&gt;
 	&lt;&lt;run UI.restart()&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="open fridge" tags="black" position="206,2931" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="open fridge" tags="black" position="206,2931" size="100,100">&lt;&lt;audio &quot;fridge&quot; play&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/insidefridge.jpg&quot;&gt;
 
 
@@ -1078,7 +1121,12 @@ body.badend{
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="look at cake" tags="black" position="365,3172" size="100,100">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="look at cake" tags="black" position="365,3172" size="100,100">&lt;&lt;audio &quot;box&quot; play&gt;&gt;
+&lt;&lt;audio &quot;goose3&quot; play&gt;&gt;
+&lt;&lt;audio &quot;scary&quot; volume 0 play&gt;&gt;
+&lt;&lt;audio &quot;scary&quot; fadeoverto 3 1&gt;&gt;
+
+&lt;&lt;nobr&gt;&gt;
 &lt;&lt;audio &quot;goose1&quot; volume 1 play&gt;&gt;
 &lt;&lt;set $seconds to 10&gt;&gt;
 &lt;span id=&quot;countdown&quot;&gt;&lt;img class=&quot;title-center-image&quot; src=&quot;images/cake.png&quot;&gt;&lt;/span&gt;

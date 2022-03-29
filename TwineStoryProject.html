@@ -170,6 +170,11 @@ body.badend{
 	text-align: center;
 }
 
+.inline-block{
+  display:inline-block;
+  padding-right: 40px;
+}
+
 .title-center-image {
   display: block;
   margin-left: auto;
@@ -214,7 +219,19 @@ body.badend{
 
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="The Goose" tags="" position="379,394" size="100,100"> 
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// volume slider, by chapel; for sugarcube 2
+!function(){function e(e){"number"!=typeof e&&(e=+e),(Number.isNaN(e)||0>e)&&(e=0),e>1&&(e=1)
+try{if(!SimpleAudio)throw Error("Cannot access audio API.")
+"function"==typeof SimpleAudio.volume?SimpleAudio.volume(e):SimpleAudio.volume=e}catch(t){console.error(t.message,t),$.wiki("<<masteraudio volume "+e+">>")}finally{return e}}function t(){var t=settings.volume/a.rangeMax
+a.current=t.toFixed(2),e(a.current)}var n={},a={current:100,rangeMax:100,step:1,setting:!0}
+n.last=a.current,n.start=n.last/a.rangeMax,postdisplay["volume-task"]=function(t){delete postdisplay[t],e(n.start.toFixed(2))},$(document).on("input","input[name=volume]",function(){var t=$("input[name=volume]").val(),o=t/a.rangeMax
+a.current=o.toFixed(2),e(a.current),n.last=t}),Macro.add("volume",{handler:function(){var e=$(document.createElement("span")),t=$(document.createElement("input")),o="macro-"+this.name
+t.attr({id:"volume-control",type:"range",name:"volume",min:"0",max:a.rangeMax,step:a.step,value:n.last}),e.append(t).addClass(o).appendTo(this.output)}}),a.setting&&(Setting&&Setting.addRange&&"function"==typeof Setting.addRange?Setting.addRange("volume",{label:"Volume: ",min:0,max:a.rangeMax,step:a.step,"default":a.current,onInit:t,onChange:t}):console.error("This version of SugarCube does not include the `Settings.addRange()` method; please try updating to the latest version of SugarCube."))}()
+// end volume slider
+
+</script><tw-passagedata pid="1" name="The Goose" tags="" position="379,393" size="100,100"> 
 &lt;&lt;audio mainbackground loop play&gt;&gt;
 
 &lt;&lt;nobr&gt;&gt;
@@ -259,7 +276,10 @@ body.badend{
   
   &lt;p class=&quot;back-button&quot;&gt;&lt;&lt;return Back&gt;&gt;&lt;/p&gt;
 
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Settings" tags="" position="170,411" size="100,100">&lt;p class=&quot;back-button&quot;&gt;&lt;&lt;return Back&gt;&gt;&lt;/p&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="382,267" size="100,100">&lt;&lt;cacheaudio &quot;alarm1&quot; &quot;sfx/alarm-no1.mp3&quot;&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Settings" tags="" position="170,411" size="100,100">&lt;p class=&quot;inline-block&quot;&gt;Master Volume&lt;/p&gt;&lt;span class=&quot;inline-block&quot;&gt;&lt;&lt;volume&gt;&gt;&lt;/span&gt;
+
+&lt;p class=&quot;back-button&quot;&gt;&lt;&lt;return Back&gt;&gt;&lt;/p&gt;
+</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="382,267" size="100,100">&lt;&lt;cacheaudio &quot;alarm1&quot; &quot;sfx/alarm-no1.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;angrymob&quot; &quot;sfx/angry-mob-loop.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;dooropenandclose&quot; &quot;sfx/door-opening-and-closing.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;footsteps&quot; &quot;sfx/foot-steps.mp3&quot;&gt;&gt;
@@ -935,6 +955,7 @@ body.badend{
 &lt;&lt;nobr&gt;&gt;
 &lt;img class=&quot;title-center-image&quot; src=&quot;images/tgifriday.png&quot;&gt;
 
+&lt;p&gt;From inside: &lt;/p&gt;
 &lt;&lt;type 100ms skipkey &quot;Control&quot;&gt;&gt;
 &lt;p class=&quot;gooseTalking&quot;&gt;JUST GET THE BOTTOMLESS FRIES&lt;/p&gt;
 &lt;&lt;/type&gt;&gt;
